@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#drawingAreaMouseDragged" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PainterAppController">
+   <children>
+      <TitledPane animated="false" text="Drawing Color">
+         <content>
+            <VBox prefHeight="51.0" prefWidth="100.0">
+               <children>
+                  <RadioButton fx:id="blackBut" mnemonicParsing="false" onAction="#colorRadioButtonSelected" prefHeight="13.0" prefWidth="49.0" text="Black">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="colorGroupButtons" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="redBut" mnemonicParsing="false" onAction="#colorRadioButtonSelected" text="Red" toggleGroup="$colorGroupButtons" />
+                  <RadioButton fx:id="greenBut" mnemonicParsing="false" onAction="#colorRadioButtonSelected" text="Green" toggleGroup="$colorGroupButtons" />
+                  <RadioButton fx:id="blueBut" mnemonicParsing="false" onAction="#colorRadioButtonSelected" text="Blue" toggleGroup="$colorGroupButtons" />
+               </children>
+            </VBox>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="sizeToggleGroup" layoutX="4.0" layoutY="152.0" prefHeight="26.0" prefWidth="95.0" text="Pen Size">
+         <content>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <RadioButton fx:id="largeBut" mnemonicParsing="false" onAction="#sizeRadioButtonSelected" text="Large">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sizeGroupButtons" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="medBut" mnemonicParsing="false" onAction="#sizeRadioButtonSelected" text="Medium" toggleGroup="$sizeGroupButtons" />
+                  <RadioButton fx:id="smallBut" mnemonicParsing="false" onAction="#sizeRadioButtonSelected" text="Small" toggleGroup="$sizeGroupButtons" />
+               </children>
+            </VBox>
+         </content></TitledPane>
+      <Button layoutX="11.0" layoutY="294.0" mnemonicParsing="false" onAction="#undoButtonPressed" prefHeight="25.0" prefWidth="82.0" text="Undo" />
+      <Button layoutX="11.0" layoutY="342.0" mnemonicParsing="false" onAction="#clearButtonPressed" prefHeight="25.0" prefWidth="82.0" text="Clear" />
+      <Pane fx:id="drawingAreaPane" layoutX="118.0" layoutY="14.0" prefHeight="372.0" prefWidth="471.0" />
+   </children>
+</Pane>
